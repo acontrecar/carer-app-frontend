@@ -1,1 +1,77 @@
-<p>register works!</p>
+<section class="login_section">
+  <div class="login_content">
+    <h1 class="login_content__header">Bienvenido a carerApp</h1>
+    <p class="login_content__para">
+      Crea una cuenta para disfrutar de nuestros servicios
+    </p>
+  </div>
+
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form mt-10">
+    @if (incorrectUser()) {
+    <span class="field_error mb-10">Usuario o correo ya registrados</span>
+    } @if (!isValidField('username')) {
+    <span class="field_error">{{ getFieldError("username") }}</span>
+    }
+    <label>
+      <p>Username</p>
+      <input
+        type="text"
+        formControlName="username"
+        autocomplete="name"
+        type="text"
+      />
+    </label>
+
+    @if (!isValidField('email')) {
+    <span class="field_error">{{ getFieldError("email") }}</span>
+    }
+    <label>
+      <p>Correo electronico</p>
+      <input
+        type="text"
+        formControlName="email"
+        autocomplete="email"
+        type="email"
+      />
+    </label>
+
+    @if (!isValidField('password')) {
+    <span class="field_error">{{ getFieldError("password") }}</span>
+    }
+    <label>
+      <p>Contrasenia</p>
+      <input
+        type="text"
+        formControlName="password"
+        autocomplete="email"
+        type="email"
+      />
+    </label>
+
+    @if (!isValidField('confirmPassword')) {
+    <span class="field_error">{{ getFieldError("confirmPassword") }}</span>
+    } @else if (myForm.errors?.['mismatch'] && myForm.touched ) {
+    <span class="field_error">Las contrasenias deben coincidir</span>
+
+    }
+    <label>
+      <p>Repite la contrasenia</p>
+      <input
+        type="text"
+        formControlName="confirmPassword"
+        autocomplete="email"
+        type="email"
+      />
+    </label>
+
+    <div class="space_submit flex-column">
+      <input
+        class="btn_submit"
+        type="submit"
+        value="Register"
+        [disabled]="myForm.invalid"
+      />
+      <a class="subtitle_acount" routerLink="/">Ya tienes cuenta? Logeate</a>
+    </div>
+  </form>
+</section>

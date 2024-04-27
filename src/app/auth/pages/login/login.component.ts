@@ -10,7 +10,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { takeUntil } from 'rxjs';
 import { AuthenService } from '../../../core/services/common/authen.service';
 import { DestroyAutoService } from '../../../core/services/utils/destroy-auto.service';
@@ -18,7 +18,7 @@ import { DestroyAutoService } from '../../../core/services/utils/destroy-auto.se
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterModule],
   providers: [],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
