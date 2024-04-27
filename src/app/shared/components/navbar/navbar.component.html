@@ -1,0 +1,29 @@
+<header>
+  <nav class="navbar container">
+    <a class="navbar-brand" routerLink="/medic">CarerApp</a>
+
+    <div class="hamburger_menu" (click)="toggleMenu()">
+      <img
+        class="hamburger_menu__icon"
+        [src]="
+          isOpenNavbar()
+            ? '../../../../assets/icons/closeIcon.svg'
+            : '../../../../assets/icons/hambugerIcon.svg'
+        "
+        alt=""
+      />
+    </div>
+
+    <div class="menu" [class.block]="isOpenNavbar()">
+      <ul class="navbar-nav">
+        @for (item of menuItem(); track item.routerLink) {
+        <li class="nav-item">
+          <a class="nav-link" routerLink="{{ item.routerLink }}">{{
+            item.label
+          }}</a>
+        </li>
+        }
+      </ul>
+    </div>
+  </nav>
+</header>
