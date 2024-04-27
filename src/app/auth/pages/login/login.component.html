@@ -1,0 +1,41 @@
+<section class="login_section">
+  <div class="login_content">
+    <h1 class="login_content__header">Bienvenido a carerApp</h1>
+    <p class="login_content__para">
+      La web para organizar la vida de un paciente y de su cuidador
+    </p>
+  </div>
+
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form mt-10">
+    @if (!isCorrectUser()) {
+    <span class="field_error mb-10">Correo o contrasenia invalidos</span>
+    }
+
+    <label>
+      <p>Correo electronico</p>
+      <input
+        type="text"
+        formControlName="email"
+        autocomplete="email"
+        type="email"
+      />
+    </label>
+
+    <label>
+      <p>Contrasenia</p>
+      <input
+        type="text"
+        formControlName="password"
+        autocomplete="email"
+        type="email"
+      />
+    </label>
+
+    <div class="space_submit flex-column">
+      <input class="btn_submit" type="submit" value="Login" />
+      <!-- <a class="subtitle_acount" routerLink="/register"
+        >No tienes cuenta? Registrate</a
+      > -->
+    </div>
+  </form>
+</section>

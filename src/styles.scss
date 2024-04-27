@@ -1,1 +1,127 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+
+  font-weight: normal;
+}
+
+main {
+  padding: 5%;
+}
+
+// COLORS
+
+$dark-blue-50: #f2f4ff;
+$dark-blue-100: #e6e8ff;
+$dark-blue-200: #d1d5ff;
+$dark-blue-300: #acb0ff;
+$dark-blue-400: #7e7fff;
+$dark-blue-500: #5249ff;
+$dark-blue-600: #3a24ff;
+$dark-blue-700: #2c13ee;
+$dark-blue-800: #240fc8;
+$dark-blue-900: #210fa9;
+$dark-blue-950: #0e066f;
+
+// STYLES
+
+.login_section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+
+  height: 90vh;
+
+  .login_content {
+    .login_content__header {
+      margin-top: 10%;
+      margin-bottom: 2%;
+    }
+
+    .login_content__para {
+      font-size: 1.1rem;
+      margin-bottom: 2%;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    label {
+      border: 2px solid $dark-blue-400;
+      margin-bottom: 5%;
+      border-radius: 10px;
+      padding: 2%;
+      background-color: $dark-blue-100;
+
+      p {
+        text-decoration: underline;
+        text-decoration-color: $dark-blue-800;
+      }
+      input {
+        border: none;
+        background-color: $dark-blue-100;
+        padding: 2%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .space_submit {
+    .subtitle_acount {
+      color: $dark-blue-200;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+
+      display: flex;
+      justify-content: flex-start;
+      &:hover {
+        color: $dark-blue-200;
+        text-decoration: underline;
+      }
+    }
+
+    .btn_submit {
+      background-color: $dark-blue-300;
+      color: $dark-blue-800;
+      font-size: 1.2rem;
+      padding: 1rem 3rem 1rem 3rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $dark-blue-300;
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.field_error {
+  color: red;
+}
+
+.mb-10 {
+  margin-bottom: 5%;
+}
+
+.mt-10 {
+  margin-top: 5%;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
